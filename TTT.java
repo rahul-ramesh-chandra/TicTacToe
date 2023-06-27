@@ -3,7 +3,7 @@ public class TTT {
     private String[][] box = {{"1", "2", "3"}, {"4", "5", "6"}, {"7","8","9"}};
     private static String[] store = new String[10];
     int fill=1;
-
+    //Accept choice from the user
     public void accept1(String c, int p) 
     {
         for (int i = 0; i < 3; i++) 
@@ -20,7 +20,8 @@ public class TTT {
             }
         }
     }
-
+    
+    //Display output after choosed choice
     public int display() 
     {
         for (int i = 0; i < 3; i++) 
@@ -35,6 +36,7 @@ public class TTT {
         
     }
     
+    //Returns result if player 2 win 
     public int winResultp2() {
         // Check rows
         for (int i = 0; i < 3; i++) {
@@ -61,6 +63,7 @@ public class TTT {
         return 0;
     }
     
+    //Returns result if player 1 wins
     public int winResultp1() {
         // Check rows
         for (int i = 0; i < 3; i++) {
@@ -86,7 +89,8 @@ public class TTT {
         
         return 0;
     }
-
+    
+    //Returns result if game is draw
     public int drawResult()
     {
       if(store[8]!=null)
@@ -95,6 +99,7 @@ public class TTT {
       return 1;
     }
     
+    //Checks if entered choice is legal
     public boolean legal(String c) 
     {
       if (c.equals("1") || c.equals("2") || c.equals("3") || c.equals("4") || c.equals("5") || c.equals("6") || c.equals("7") || c.equals("8") || c.equals("9")) 
@@ -113,6 +118,7 @@ public class TTT {
       return false;
     }
 
+    //Stores previous choices of players to compare legal choices
     public void store(String c) 
     {
         for (int j = 0; j < 9; j++) 
@@ -125,6 +131,7 @@ public class TTT {
         }
     }
 
+    //Main Function 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         TTT obj = new TTT();
